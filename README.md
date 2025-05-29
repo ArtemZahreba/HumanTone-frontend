@@ -26,11 +26,9 @@ Huntly is a lightweight web interface built to interact with the HumanTone backe
 
 The app sends a POST request to backend:
 
-```
-
 [https://github.com/ArtemZahreba/HumanTone-backend](https://github.com/ArtemZahreba/HumanTone-backend)
 
-```
+
 
 Make sure CORS is correctly set up on the backend to allow communication from the frontend domain.
 
