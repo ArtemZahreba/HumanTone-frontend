@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Huntly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#3b82f6",
+              secondary: "#64748b",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+    </style>
+  </head>
+  <body class="bg-gray-50 min-h-screen flex flex-col">
+    <div class="flex-grow container mx-auto px-4 py-12 max-w-3xl">
+      <header class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-2">
+          Huntly
+        </h1>
+      </header>
+      <main>
+        <div class="mb-8">
+          <div class="relative mb-2">
+            <textarea
+              id="textInput"
+              class="w-full p-6 border-none bg-white rounded shadow-md focus:ring-2 focus:ring-primary focus:outline-none resize-none h-56 text-gray-700"
+              placeholder="Enter your text here"
+              maxlength="500"
+            ></textarea>
+            <div
+              class="absolute bottom-3 right-4 text-sm text-gray-500"
+              id="charCount"
+            >
+              <span id="currentCount">0</span>/500 characters
+            </div>
+          </div>
+          <div class="flex gap-3 mt-4">
+            <button
+              id="humanizeBtn"
+              class="flex items-center justify-center gap-2 bg-primary hover:bg-blue-500 text-white py-3 px-6 rounded-button transition-colors duration-200 whitespace-nowrap"
+            >
+              <span class="w-5 h-5 flex items-center justify-center">
+                <i class="ri-magic-line"></i>
+              </span>
+              Humanize Text
+            </button>
+            <button
+              id="copyBtn"
+              class="flex items-center justify-center gap-2 bg-gray-800 hover:bg-gray-700 text-white py-3 px-6 rounded-button transition-colors duration-200 whitespace-nowrap"
+            >
+              <span class="w-5 h-5 flex items-center justify-center">
+                <i class="ri-file-copy-line"></i>
+              </span>
+              Copy Result
+            </button>
+          </div>
+        </div>
+        <div class="mb-8 bg-white rounded-lg shadow-md p-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-4">
+            Rewritten Result
+          </h2>
+          <div
+            id="resultText"
+            class="text-gray-700 min-h-[100px] bg-gray-50 rounded p-4"
+          >
+            Your rewritten text will appear here...
+          </div>
+        </div>
+        <section class="bg-white rounded-lg shadow-md p-6 mb-12">
+          <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+            About Huntly
+          </h2>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            Huntly is an experimental text rewriting tool built to help you make your content more human-like. It's powered by a lightweight backend built with Flask and integrates the Hugging Face Inference API for natural language processing. The frontend is crafted using HTML, Tailwind CSS, and JavaScript.
+            <br><br>
+            As this project is still in its early stage and runs on free-tier hosting, it may experience limited stability, slower response times, or temporary downtime depending on usage.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="https://github.com/ArtemZahreba/HumanTone-frontend"
+              class="flex items-center justify-center gap-2 bg-gray-800 hover:bg-gray-700 text-white py-3 px-6 rounded-button transition-colors duration-200 whitespace-nowrap"
+              target="_blank"
+            >
+              <span class="w-5 h-5 flex items-center justify-center">
+                <i class="ri-github-fill"></i>
+              </span>
+              Frontend Repository
+            </a>
+            <a
+              href="https://github.com/ArtemZahreba/HumanTone-backend"
+              class="flex items-center justify-center gap-2 bg-gray-800 hover:bg-gray-700 text-white py-3 px-6 rounded-button transition-colors duration-200 whitespace-nowrap"
+              target="_blank"
+            >
+              <span class="w-5 h-5 flex items-center justify-center">
+                <i class="ri-github-fill"></i>
+              </span>
+              Backend Repository
+            </a>
+            <a
+              href="https://artemzahreba.pythonanywhere.com/resume/en"
+              class="flex items-center justify-center gap-2 bg-primary hover:bg-blue-500 text-white py-3 px-6 rounded-button transition-colors duration-200 whitespace-nowrap"
+              target="_blank"
+            >
+              <span class="w-5 h-5 flex items-center justify-center">
+                <i class="ri-file-list-3-line"></i>
+              </span>
+              View My Resume
+            </a>
+          </div>
+        </section>
+      </main>
+    </div>
+    <footer class="bg-white py-6 border-t border-gray-200">
+      <div class="container mx-auto px-4 text-center">
+        <p class="text-gray-600">Developed by <a class="text-blue-600 hover:text-blue-800 underline" href="https://artemzahreba.pythonanywhere.com/resume/en">Artem Zahreba</a></p>
+      </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
