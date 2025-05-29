@@ -1,4 +1,4 @@
-# Huntly Frontend
+# HumanTone — AI Text Humanizer ✨
 
 Huntly is a lightweight web interface built to interact with the HumanTone backend API. It allows users to submit text for rewriting in a more natural, human-like style. This frontend is a key part of the HumanTone project.
 
