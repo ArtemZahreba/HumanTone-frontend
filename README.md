@@ -40,7 +40,6 @@ Make sure CORS is correctly set up on the backend to allow communication from th
 /js
 └── main.js         # Handles input, button actions, and API calls
 index.html              # Main HTML structure and layout
-tailwind.config         # Configured inline in HTML via CDN
 
 ```
 
